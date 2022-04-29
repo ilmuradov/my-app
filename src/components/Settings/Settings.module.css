@@ -1,0 +1,121 @@
+/* ==> NIGHT <== */
+.container__night {
+    width: 75%;
+    height: 85vh;
+    margin-left: 12.5%;
+    border-radius: 15px;
+    background: var(--color-content__night);
+    transition: .3s;
+}
+
+.h_container__night {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    border-bottom: 1px solid white;
+}
+
+.h_container__night h1 {
+    margin: auto auto auto 5%;
+    color: white;
+}
+
+.subContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 5%;
+}
+
+.dayNight__night {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    height: 30px;
+    margin-left: 0;
+    /*border-bottom: 1px solid white;*/
+}
+
+.dayNight__night p {
+    font-size: 1.3rem;
+    color: white;
+}
+
+.toggleBtn__true {
+    display: flex;
+    padding: 2px 3px;
+
+    width: 56px;
+    height: auto;
+    background: #1bea1b;
+    border-radius: 20px;
+    border: none;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.true {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: white;
+    margin-left: auto;
+    transition: .3s;
+}
+
+/* ==> DAY <== */
+.container__day {
+    width: 75%;
+    height: 85vh;
+    margin-left: 12.5%;
+    border-radius: 15px;
+    background: var(--color-content__day);
+    transition: .3s;
+}
+
+.h_container__day {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    border-bottom: 1px solid black;
+}
+
+.h_container__day h1 {
+    margin: auto auto auto 5%;
+    color: black;
+}
+
+.dayNight__day {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    height: 30px;
+    margin-left: 0;
+    /*border-bottom: 1px solid white;*/
+}
+
+.dayNight__day p {
+    font-size: 1.3rem;
+    color: black;
+}
+
+.toggleBtn__false {
+    display: flex;
+    padding: 2px 3px;
+
+    width: 50px;
+    height: auto;
+    background: silver;
+    border-radius: 20px;
+    border: none;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.false {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: white;
+    margin-right: auto;
+    transition: .3s;
+}

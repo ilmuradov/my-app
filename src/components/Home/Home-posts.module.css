@@ -1,0 +1,138 @@
+/* ==> NIGHT <== */
+
+.container {
+    display: flex;
+    margin-top: 10px;
+    width: 95%;
+    margin-left: 0%;
+    height: auto;
+    padding: 10px 5px;
+    color: #EAE1E1;
+    /*overflow: hidden;*/
+    /*background: #254c6e;*/
+}
+
+.photo_container {
+    display: flex;
+    /*margin: auto;*/
+    /*padding: 10px;*/
+    width: 100px;
+    height: 70px;
+    /*background: white;*/
+    /*height: 200px;*/
+
+}
+
+.photo_element {
+    margin: auto;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #EAE1E1;
+}
+
+.img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.subContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /*background: lightgray;*/
+}
+
+.username {
+    display: flex;
+    width: 100%;
+    height: 40%;
+    padding: 5px;
+    /*background: #4d4de0;*/
+}
+
+.username h2 {
+    margin-top: auto;
+}
+
+.status {
+    display: flex;
+    width: 100%;
+    height: 60%;
+}
+
+.status p {
+    text-align: left;
+    /*margin: auto;*/
+}
+
+
+/* ==> DAY <== */
+
+.container__day {
+    display: flex;
+    margin-top: 10px;
+    width: 95%;
+    margin-left: 0%;
+    height: auto;
+    padding: 10px 5px;
+    color: var(--color-background__night);
+    /*overflow: hidden;*/
+    /*background: #254c6e;*/
+}
+
+.photo_container__day {
+    display: flex;
+    /*margin: auto;*/
+    /*padding: 10px;*/
+    width: 100px;
+    height: 70px;
+    /*background: white;*/
+    /*height: 200px;*/
+
+}
+
+.photo_element__day {
+    margin: auto;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: var(--color-background__night);
+}
+
+.img__day {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.subContainer__day {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /*background: lightgray;*/
+}
+
+.username__day {
+    display: flex;
+    width: 100%;
+    height: 40%;
+    padding: 5px;
+    /*background: #4d4de0;*/
+}
+
+.username__day h2 {
+    margin-top: auto;
+}
+
+.status__day {
+    display: flex;
+    width: 100%;
+    height: 60%;
+}
+
+.status__day p {
+    text-align: left;
+    /*margin: auto;*/
+}

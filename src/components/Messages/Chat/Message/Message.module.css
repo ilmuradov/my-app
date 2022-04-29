@@ -1,0 +1,87 @@
+/* ==> NIGHT <== */
+.item {
+    display: flex;
+
+    margin: 10px 3px 3px 10px;
+
+    width: fit-content;
+    height: auto;
+    max-width: 40%;
+
+    background: transparent;
+    transition: .2s ease-in-out;
+}
+
+.avatar {
+    display: flex;
+    width: 30px;
+    height: auto;
+
+    margin-right: auto;
+    margin-top: auto;
+}
+
+.img {
+    margin: auto auto 0;
+    width: 25px;
+    height: 25px;
+    background: lightgray;
+    border-radius: 50%;
+}
+
+.text {
+    width: auto;
+    margin: auto;
+    margin-left: 5px;
+
+    padding: 15px;
+    background: white;
+    /*border: 1px solid lightgray;*/
+    border-radius: 20px;
+    font-size: 1rem;
+    color: var(--color-body__night);
+}
+
+
+/* ==> DAY <== */
+.item__day {
+    display: flex;
+
+    margin: 10px 3px 3px 10px;
+
+    width: fit-content;
+    height: auto;
+    max-width: 40%;
+
+    background: transparent;
+    transition: .2s ease-in-out;
+}
+
+.avatar__day {
+    display: flex;
+    width: 30px;
+    height: auto;
+
+    margin-right: auto;
+    margin-top: auto;
+}
+
+.img {
+    margin: auto auto 0;
+    width: 25px;
+    height: 25px;
+    background: lightgray;
+    border-radius: 50%;
+}
+
+.text__day {
+    width: auto;
+    margin: auto auto auto 5px;
+
+    padding: 15px;
+    background: var(--color-background__day);
+    /*border: 1px solid lightgray;*/
+    border-radius: 20px;
+    font-size: 1rem;
+    color: var(--color-body__night);
+}

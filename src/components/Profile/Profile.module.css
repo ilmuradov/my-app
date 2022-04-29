@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+/* ==> NIGHT <== */
+.profile {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    /*height: 85vh;*/
+    margin-left: 12.5%;
+    background: var(--color-content__night);
+    border-radius: 15px;
+    padding: 20px 10px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    /*margin-top: 20px;*/
+    /*background: white;*/
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 65%;
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+}
+
+.avatarPhoto {
+    display: flex;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    /*overflow: hidden;*/
+}
+
+.photoNull {
+    width: 150px;
+    height: 150px;
+    background: lightgray;
+    border-radius: 50%;
+}
+
+.fullName {
+    font-size: 1.8rem;
+}
+
+.looking {
+    display: flex;
+    justify-content: space-between;
+}
+
+.description {
+    width: 70%;
+}
+
+
+/* ==> DAY <== */
+.profile__day {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    /*height: 85vh;*/
+    margin-left: 12.5%;
+    background: var(--color-content__day);
+    border-radius: 15px;
+    padding: 20px 10px;
+}
+
+.container__day {
+    display: flex;
+    justify-content: space-around;
+    /*margin-top: 20px;*/
+    /*background: white;*/
+}
+
+.info__day {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 65%;
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+}
+
+.avatarPhoto__day {
+    display: flex;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    /*overflow: hidden;*/
+}
+
+.photoNull__day {
+    width: 150px;
+    height: 150px;
+    background: var(--color-background__night);
+    border-radius: 50%;
+}
+
+.fullName__day {
+    font-size: 1.8rem;
+}
+
+.looking__day {
+    display: flex;
+    justify-content: space-between;
+}
+
+.description__day {
+    width: 70%;
+}

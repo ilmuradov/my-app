@@ -1,0 +1,27 @@
+.container {
+    display: grid;
+    grid-template-columns: .5fr 1fr;
+    grid-template-rows: 85vh;
+
+    width: 75%;
+    height: 85vh;
+    margin-left: 12.5%;
+    /*border: 1px solid lightgray;*/
+    border-radius: 15px;
+    background: var(--color-content__night);
+    overflow: hidden;
+}
+
+.container__day {
+    display: grid;
+    grid-template-columns: .5fr 1fr;
+    grid-template-rows: 85vh;
+
+    width: 75%;
+    height: 85vh;
+    margin-left: 12.5%;
+    /*border: 1px solid lightgray;*/
+    border-radius: 15px;
+    background: var(--color-content__day);
+    overflow: hidden;
+}

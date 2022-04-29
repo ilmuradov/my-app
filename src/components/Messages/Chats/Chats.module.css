@@ -1,0 +1,87 @@
+/* ==> NIGHT <== */
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 1fr;
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    width: 100%;
+    /*height: 15vh;*/
+    border-bottom: 1px solid lightgray;
+}
+
+.header h2 {
+    margin: auto auto auto 5%;
+    color: #fff;
+}
+
+.dialogs {
+    height: auto;
+    overflow-y: scroll;
+}
+
+.dialogs::-webkit-scrollbar {
+    width: 7px;
+}
+
+.dialogs::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.dialogs::-webkit-scrollbar-thumb {
+    background: white;
+    border: none;
+    border-radius: 10px;
+}
+
+.dialogs::-webkit-scrollbar-thumb:hover {
+    border-radius: 15px;
+}
+
+/* ==> DAY <== */
+
+.container__day {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 1fr;
+    width: 100%;
+}
+
+.header__day {
+    display: flex;
+    width: 100%;
+    /*height: 15vh;*/
+    border-bottom: 1px solid black;
+}
+
+.header__day h2 {
+    margin: auto auto auto 5%;
+    color: #000000;
+}
+
+.dialogs__day {
+    height: auto;
+    overflow-y: scroll;
+}
+
+.dialogs__day::-webkit-scrollbar {
+    width: 7px;
+}
+
+.dialogs__day::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.dialogs__day::-webkit-scrollbar-thumb {
+    background: var(--color-background__night);
+    border: none;
+    border-radius: 10px;
+}
+
+.dialogs__day::-webkit-scrollbar-thumb:hover {
+    border-radius: 15px;
+}

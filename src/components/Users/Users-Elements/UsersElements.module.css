@@ -1,0 +1,77 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 5px 10px;
+    width: auto;
+
+    /*border-radius: 5px;*/
+    /*background: #000d85;*/
+    cursor: pointer;
+}
+
+.container:hover {
+    background: var(--color-hover);
+}
+
+.photoAndName {
+    width: 45%;
+    margin-left: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.name {
+    margin: auto auto auto 15px;
+    width: 50%;
+    color: #fff;
+    text-decoration: none;
+}
+
+.name:hover {
+    text-decoration: underline;
+    color: #efefef;
+}
+
+.isOnline {
+    margin: auto;
+    width: 30%;
+    overflow: clip;
+    color: #fff;
+
+}
+
+.photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: auto 0;
+}
+
+.btn__green {
+    margin: auto 0 auto auto;
+    width: 70px;
+    height: 40px;
+    outline: none;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background: white;
+    color: darkgreen;
+    font-weight: bold;
+    transition: .1s;
+    cursor: pointer;
+}
+
+.btn__red {
+    margin: auto 0 auto auto;
+    width: 70px;
+    height: 40px;
+    outline: none;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background: white;
+    color: red;
+    font-weight: bold;
+    transition: .1s;
+    cursor: pointer;
+}
