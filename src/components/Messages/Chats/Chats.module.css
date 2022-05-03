@@ -60,7 +60,7 @@
 
 .header__day h2 {
     margin: auto auto auto 5%;
-    color: #000000;
+    color: var(--color-text__day);
 }
 
 .dialogs__day {
@@ -77,7 +77,7 @@
 }
 
 .dialogs__day::-webkit-scrollbar-thumb {
-    background: var(--color-background__night);
+    background: var(--color-text__day);
     border: none;
     border-radius: 10px;
 }

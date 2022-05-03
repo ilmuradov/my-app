@@ -87,4 +87,14 @@ export const getUsersThunkCreator = (currentPage, itemsOnPage) => (dispatch) => 
         });
 }
 
+export const onSpanChangedThunkCreator = (m, itemsOnPage) => (dispatch) => {
+    dispatch(setCurrentPage(m))
+    dispatch(toggleIsFetching(true))
+    usersAPI.onSpanChanged(m, itemsOnPage)
+        .then(response => {
+            dispatch(setUsers(response.items))
+            dispatch(toggleIsFetching(false))
+        })
+}
+
 export default usersReducer;

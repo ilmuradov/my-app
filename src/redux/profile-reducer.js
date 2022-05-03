@@ -1,3 +1,5 @@
+import { usersAPI } from "../API/usersAPI";
+
 const SEND_POST = 'ADD-POST';
 const TYPE_TEXT = 'CHANGE-AREA-TEXT';
 const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
@@ -49,5 +51,14 @@ export let newPostCreator = () => ({ type: SEND_POST });
 export let typeNewPostCreator = (text) => ({ type: TYPE_TEXT, text: text });
 export let setUserProfile = (profile) => ({ type: SET_USER_PROFILE, profile });
 export let toggleIsFetching = (isFetching) => ({ type: TOGGLE_IS_FETCHING, isFetching });
+
+export const profilePageThunkCreator = (userId) => (dispatch) => {
+    dispatch(toggleIsFetching(true))
+        usersAPI.getAuthUser(userId)
+        .then(response => {
+            dispatch(setUserProfile(response))
+            dispatch(toggleIsFetching(true))
+        })
+}
 
 export default profileReducer;

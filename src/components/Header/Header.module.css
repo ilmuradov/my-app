@@ -19,6 +19,7 @@
     margin-top: 1.5vh;
     background: var(--color-background__day);
     border-radius: 10px;
+    box-shadow: var(--box-shadow);
     /*border-bottom: 1px solid lightgrey;*/
 }
 

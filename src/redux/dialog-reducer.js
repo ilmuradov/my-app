@@ -42,7 +42,7 @@ const dialogReducer = (state = stateInitial, action) => {
     }
 }
 
-export let addNewMessageAC = () => ({ type: SEND_MESSAGE});
-export let sendNewMessageAC = (text) => ({ type:TYPE_MESSAGE, message: text });
+export let sendMessage = () => ({ type: SEND_MESSAGE});
+export let typeMessage = (text) => ({ type:TYPE_MESSAGE, message: text });
 
 export default dialogReducer;

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
+import classes from './App.module.css';
 import {Routes, Route} from "react-router-dom";
+import {connect} from "react-redux";
 import Music from '../components/Music/Music';
 import UsersContainer from '../components/Users/UsersContainer';
 import ProfileContainer from "../components/Profile/ProfileContainer";
@@ -9,27 +9,52 @@ import HomeContainer from "../components/Home/HomeContainer";
 import SettingsContainer from "../components/Settings/SettingsContainer";
 import MessagesContainer from "../components/Messages/MessagesContainer";
 
-const App = () => {
+const App = (props) => {
 
     return (
-        <div className={'app-wrapper__night'}>
-            <div className='app-wrapper-content'>
-                <Routes>
-                    <Route path='/profile' element={<ProfileContainer />} />
-                    <Route path='/profile/*' element={<ProfileContainer />} />
-                    <Route path='/messages' element={<MessagesContainer />}/>
-                    <Route path='/newPost' element={<SettingsContainer />}/>
-                    <Route path='/home' element={<HomeContainer />}/>
-                    <Route path='/activity' element={<Music />}/>
-                    <Route path='/users' element={<UsersContainer />}/>
-                </Routes>
-            </div>
+        <>
+            {
+                props.night ?
+                    <div className={classes.app_wrapper__night}>
+                        <div className={classes.app_wrapper__content}>
+                            <Routes>
+                                <Route path='/profile' element={<ProfileContainer />} />
+                                <Route path='/profile/*' element={<ProfileContainer />} />
+                                <Route path='/messages' element={<MessagesContainer />}/>
+                                <Route path='/newPost' element={<SettingsContainer />}/>
+                                <Route path='/home' element={<HomeContainer />}/>
+                                <Route path='/activity' element={<Music />}/>
+                                <Route path='/users' element={<UsersContainer />}/>
+                            </Routes>
+                        </div>
 
-            <HeaderContainer />
-        </div>
+                        <HeaderContainer />
+                    </div>
+                :
+                    <div className={classes.app_wrapper__day}>
+                        <div className={classes.app_wrapper__content}>
+                            <Routes>
+                                <Route path='/profile' element={<ProfileContainer />} />
+                                <Route path='/profile/*' element={<ProfileContainer />} />
+                                <Route path='/messages' element={<MessagesContainer />}/>
+                                <Route path='/newPost' element={<SettingsContainer />}/>
+                                <Route path='/home' element={<HomeContainer />}/>
+                                <Route path='/activity' element={<Music />}/>
+                                <Route path='/users' element={<UsersContainer />}/>
+                            </Routes>
+                        </div>
+
+                        <HeaderContainer />
+                    </div>
+            }
+        </>
     );
 
 }
 
 
-export default App;
+const mapStateToProps = (state) => ({
+    night: state.settings.night
+})
+
+export default connect (mapStateToProps, {}) (App);

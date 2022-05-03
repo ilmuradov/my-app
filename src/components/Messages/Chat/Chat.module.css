@@ -85,7 +85,7 @@
     /*height: 85vh;*/
     padding: 0;
     transition: .3s;
-    border-left: 1px solid white;
+    border-left: 1px solid black;
     overflow: hidden;
 }
 
@@ -110,7 +110,7 @@
 
 .name__day {
     margin: auto auto auto 0;
-    color: #000000;
+    color: var(--color-text__day);
 }
 
 .infoImg {
@@ -136,7 +136,7 @@
 }
 
 .messages__day::-webkit-scrollbar-thumb {
-    background: var(--color-background__night);
+    background: var(--color-text__day);
     border: none;
     border-radius: 10px;
 }

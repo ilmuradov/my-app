@@ -70,7 +70,7 @@
     margin: auto auto 0;
     width: 25px;
     height: 25px;
-    background: lightgray;
+    background: var(--color-body__day);
     border-radius: 50%;
 }
 
@@ -79,9 +79,9 @@
     margin: auto auto auto 5px;
 
     padding: 15px;
-    background: var(--color-background__day);
+    background: var(--color-body__day);
     /*border: 1px solid lightgray;*/
     border-radius: 20px;
     font-size: 1rem;
-    color: var(--color-body__night);
+    color: var(--color-text__day);
 }

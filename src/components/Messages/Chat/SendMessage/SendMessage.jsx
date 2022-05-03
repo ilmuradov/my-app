@@ -2,13 +2,13 @@ import React from 'react'
 import classes from './SendMessage.module.css'
 
 const SendMessage = (props) => {
-    const addNewMessage = () => {
-        props.addNewMessageCreator();
+    const sendMessage = () => {
+        props.sendMessage();
     }
 
-    const sendNewMessage = (e) => {
+    const typeMessage = (e) => {
         e = e.target.value;
-        props.sendNewCreator(e);
+        props.typeMessage(e);
     }
 
     return (
@@ -16,15 +16,15 @@ const SendMessage = (props) => {
             {props.night ?
                 <div className={classes.container}>
                     <div className={classes.subcontainer}>
-                        <input onChange={sendNewMessage} type="text" value={props.value} placeholder='Message...' className={classes.input} />
-                        <button className={classes.button} onClick={addNewMessage}> Send </button>
+                        <input onChange={typeMessage} type="text" value={props.value} placeholder='Message...' className={classes.input} />
+                        <button className={classes.button} onClick={sendMessage}> Send </button>
                     </div>
                 </div>
                 :
                 <div className={classes.container__day}>
                     <div className={classes.subcontainer__day}>
-                        <input onChange={sendNewMessage} type="text" value={props.value} placeholder='Message...' className={classes.input__day} />
-                        <button className={classes.button__day} onClick={addNewMessage}> Send </button>
+                        <input onChange={typeMessage} type="text" value={props.value} placeholder='Message...' className={classes.input__day} />
+                        <button className={classes.button__day} onClick={sendMessage}> Send </button>
                     </div>
                 </div>
 

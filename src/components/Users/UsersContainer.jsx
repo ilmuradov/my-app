@@ -5,12 +5,12 @@ import {
     setTotalCount,
     setUsers,
     toggleIsFetching, toggleIsFollowingFetching,
-    unfollow
+    unfollow,
+    onSpanChangedThunkCreator
 } from '../../redux/users-reducer';
 import Users from './Users';
 import React from "react";
 import {default as axios} from "axios";
-import {usersAPI} from '../../API/usersAPI'
 
 class UsersContainer extends React.Component {
     componentDidMount() {
@@ -20,26 +20,12 @@ class UsersContainer extends React.Component {
     }
 
     onSpanChanged = (m) => {
-        this.props.setCurrentPage(m)
-        this.props.toggleIsFetching(true)
-        usersAPI.onSpanChanged(m, this.props.itemsOnPage)
-            .then(response => {
-                this.props.setUsers(response.items)
-                this.props.toggleIsFetching(false)
-            })
+        this.props.onSpanChangedThunkCreator(m, this.props.itemsOnPage)
     }
 
-    onButtonClick = () => {
-        axios
-            .get(`https://social-network.samuraijs.com/api/1.0/users?page=${(this.props.currentPage + 1)}&count=${this.props.itemsOnPage}`)
-            .then(response => {
-                this.props.setUsers(response.data.items)
-            })
-    }
     render() {
         return <Users onSpanChanged={this.onSpanChanged}
                       currentPage={this.props.currentPage}
-                      onButtonClick={this.onButtonClick}
                       totalCount={this.props.totalCount}
                       itemsOnPage={this.props.itemsOnPage}
                       users={this.props.users}
@@ -48,7 +34,8 @@ class UsersContainer extends React.Component {
                       unfollow={this.props.unfollow}
                       followed={this.props.followed}
                       toggleIsFollowingFetching={this.props.toggleIsFollowingFetching}
-                      isFollowingFetching={this.props.isFollowingFetching}/>;
+                      isFollowingFetching={this.props.isFollowingFetching}
+                      isNight={this.props.night}/>;
     }
 }
 
@@ -60,7 +47,8 @@ const mapStateToProps = (state) => {
         currentPage: state.usersPage.currentPage,
         isFetching: state.usersPage.isFetching,
         followed: state.usersPage.users.followed,
-        isFollowingFetching: state.usersPage.isFollowingFetching
+        isFollowingFetching: state.usersPage.isFollowingFetching,
+        night: state.settings.night
     }
 }
 
@@ -95,5 +83,6 @@ export default connect(mapStateToProps, {
     setTotalCount,
     toggleIsFetching,
     toggleIsFollowingFetching,
-    getUsersThunkCreator
+    getUsersThunkCreator,
+    onSpanChangedThunkCreator
 })(UsersContainer);

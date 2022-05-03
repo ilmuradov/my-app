@@ -70,6 +70,7 @@
     border-radius: 15px;
     background: var(--color-content__day);
     transition: .3s;
+    box-shadow: var(--box-shadow);
 }
 
 .h_container__day {

@@ -14,7 +14,7 @@ const Profile = (props) => {
                 <div className={classes.profile}>
                     <div className={classes.container}>
                         {props.profile.photos.large ?
-                            <img className={classes.avatarPhoto} src={props.profile.photos.large}/>
+                            <img alt='' className={classes.avatarPhoto} src={props.profile.photos.large}/>
                             :
                             <div className={classes.photoNull}></div>}
 
@@ -28,7 +28,8 @@ const Profile = (props) => {
                                         <div className={classes.description}> <p> Job description: {props.profile.lookingForAJobDescription} </p> </div>
                                     </div>
                                     :
-                                    <p> Not looking for a job </p>}
+                                    <p> Not looking for a job </p>
+                                }
                             </div>
 
                             <div>
@@ -36,9 +37,6 @@ const Profile = (props) => {
                             </div>
                         </div>
                     </div>
-
-                    {/*<MyPosts posts={props.posts} />*/}
-
                 </div>
 
                 :
@@ -46,7 +44,7 @@ const Profile = (props) => {
                 <div className={classes.profile__day}>
                     <div className={classes.container__day}>
                         {props.profile.photos.large ?
-                            <img className={classes.avatarPhoto__day} src={props.profile.photos.large}/>
+                            <img alt='' className={classes.avatarPhoto__day} src={props.profile.photos.large}/>
                             :
                             <div className={classes.photoNull__day}></div>}
 
@@ -60,7 +58,8 @@ const Profile = (props) => {
                                         <div className={classes.description__day}> <p> Job description: {props.profile.lookingForAJobDescription} </p> </div>
                                     </div>
                                     :
-                                    <p> Not looking for a job </p>}
+                                    <p> Not looking for a job </p>
+                                }
                             </div>
 
                             <div>
@@ -68,9 +67,6 @@ const Profile = (props) => {
                             </div>
                         </div>
                     </div>
-
-                    {/*<MyPosts posts={props.posts} />*/}
-
                 </div>
             }
         </>

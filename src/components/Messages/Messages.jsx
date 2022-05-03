@@ -1,21 +1,22 @@
 import React from "react";
-import ChatsContainer from "./Chats/ChatsContainer";
-import ChatContainer from "./Chat/ChatContainer";
+import Chats from "./Chats/Chats";
+import Chat from "./Chat/Chat";
 import classes from './Messages.module.css';
 
 const Messages = (props) => {
-    console.log(props.night)
     return (
         <>
             {props.night ?
                 <div className={classes.container}>
-                    <ChatsContainer night={props.night} />
-                    <ChatContainer night={props.night} />
+                    <Chats  night={props.night} items={props.itemsChats} />
+                    <Chat   night={props.night} items={props.itemsChat} value={props.value}
+                            sendMessage={props.sendMessage} typeMessage={props.typeMessage} />
                 </div>
                 :
                 <div className={classes.container__day}>
-                    <ChatsContainer night={props.night} />
-                    <ChatContainer night={props.night} />
+                    <Chats  night={props.night} items={props.itemsChats} />
+                    <Chat   night={props.night} items={props.itemsChat} value={props.value}
+                            sendMessage={props.sendMessage} typeMessage={props.typeMessage} />
                 </div>
             }
         </>

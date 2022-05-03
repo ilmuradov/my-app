@@ -1,9 +1,9 @@
 import React from 'react';
 import Header from "./Header";
-import {default as axios} from "axios";
 import {connect} from "react-redux";
 import {setAuthData} from "../../redux/auth-reducer";
 import {setHeaderInfo, toggleIsFetching} from "../../redux/header-reducer";
+import {toggleAddNew, toggleExplore, toggleHome, toggleLikes, toggleMessages,} from "../../redux/navbar-reducer";
 import {usersAPI} from "../../API/usersAPI";
 
 class HeaderContainer extends React.Component{
@@ -32,7 +32,17 @@ const mapStateToProps = (state) => ({
     isAuth: state.auth.isAuth,
     photo: state.header.info,
     isFetching: state.header.isFetching,
-    night: state.settings.night
+    night: state.settings.night,
+    home: state.navbar.home,
+    messages: state.navbar.messages,
+    addNew: state.navbar.addNew,
+    explore: state.navbar.explore,
+    likes: state.navbar.likes,
+    profile: state.navbar.profile
 })
 
-export default connect(mapStateToProps, {setAuthData, setHeaderInfo, toggleIsFetching})(HeaderContainer);
+export default connect(mapStateToProps, 
+    {setAuthData, setHeaderInfo, 
+    toggleIsFetching,toggleHome, toggleMessages,
+    toggleAddNew, toggleExplore,
+    toggleLikes})(HeaderContainer);

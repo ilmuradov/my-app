@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {NavLink} from 'react-router-dom';
 import classes from './Navbar.module.css';
 
@@ -37,9 +37,9 @@ const Navbar = (props) => {
             <div className={classes.item}>
                 <NavLink to='/home' onClick={() => {props.toggleHome(true)}}>
                     {props.night ?
-                        <img src={props.home ? home__active : home}/>
+                        <img alt='' src={props.home ? home__active : home}/>
                         :
-                        <img src={props.home ? home__active_day : home_day}/>
+                        <img alt='' src={props.home ? home__active_day : home_day}/>
                     }
                 </NavLink>
             </div>
@@ -47,9 +47,9 @@ const Navbar = (props) => {
             <div className={classes.item}>
                 <NavLink to='/messages' onClick={() => {props.toggleMessages(true)}}>
                     {props.night ?
-                        <img src={props.messages ? messages__active : messages}/>
+                        <img alt='' src={props.messages ? messages__active : messages}/>
                         :
-                        <img src={props.messages ? messages__active_day : messages_day}/>
+                        <img alt='' src={props.messages ? messages__active_day : messages_day}/>
                     }
                 </NavLink>
             </div>
@@ -57,9 +57,9 @@ const Navbar = (props) => {
             <div className={classes.item}>
                 <NavLink to='/newPost' onClick={() => {props.toggleAddNew(true)}}>
                     {props.night ?
-                        <img src={props.addNew ? newPost__active : newPost}/>
+                        <img alt='' src={props.addNew ? newPost__active : newPost}/>
                         :
-                        <img src={props.addNew ? newPost__active_day : newPost_day}/>
+                        <img alt='' src={props.addNew ? newPost__active_day : newPost_day}/>
                     }
                 </NavLink>
             </div>
@@ -67,9 +67,9 @@ const Navbar = (props) => {
             <div className={classes.item}>
                 <NavLink to='/users' onClick={() => {props.toggleExplore(true)}}>
                     {props.night ?
-                        <img src={props.explore ? explore__active : explore}/>
+                        <img alt='' src={props.explore ? explore__active : explore}/>
                         :
-                        <img src={props.explore ? explore__active_day : explore_day}/>
+                        <img alt='' src={props.explore ? explore__active_day : explore_day}/>
                     }
                 </NavLink>
             </div>
@@ -77,16 +77,16 @@ const Navbar = (props) => {
             <div className={classes.item}>
                 <NavLink to='/activity' onClick={() => {props.toggleLikes(true)}}>
                     {props.night ?
-                        <img src={props.likes ? activity__active : activity}/>
+                        <img alt='' src={props.likes ? activity__active : activity}/>
                         :
-                        <img src={props.likes ? activity__active_day : activity_day}/>
+                        <img alt='' src={props.likes ? activity__active_day : activity_day}/>
                     }
                 </NavLink>
             </div>
 
             <div className={classes.item}>
                 <NavLink to='/profile' onClick={() => {props.toggleProfile(true)}}>
-                    <img className={classes.img} src={!props.photo ? profile : props.photo}/>
+                    <img alt='' className={classes.img} src={!props.photo ? profile : props.photo}/>
                 </NavLink>
             </div>
         </div>

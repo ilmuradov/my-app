@@ -84,6 +84,7 @@
     /*border: 1px solid lightgray;*/
     border-radius: 15px;
     overflow: hidden;
+    box-shadow: var(--box-shadow);
 }
 
 .header__day {
@@ -95,7 +96,7 @@
 }
 
 .header__day h1 {
-    color: var(--color-background__night);
+    color: var(--color-text__day);
     margin: auto auto auto 3%;
 }
 
@@ -119,7 +120,7 @@
 }
 
 .postsContainer__day::-webkit-scrollbar-thumb {
-    background: var(--color-background__night);
+    background: var(--color-text__day);
     border: none;
     border-radius: 10px;
 }

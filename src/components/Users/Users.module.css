@@ -1,3 +1,5 @@
+/* ==> NIGHT <== */
+
 .container {
     display: flex;
     flex-direction: column;
@@ -10,6 +12,94 @@
     /*border: 1px solid lightgray;*/
     border-radius: 10px;
     overflow: hidden;
+}
+
+.users {
+    display: flex;
+    justify-content: center;
+    /*width: 100%;*/
+    height: 50px;
+    border-bottom: 1px solid lightgray;
+    /*margin-left: 20%;*/
+}
+
+.users h3 {
+    margin: auto auto auto 5%;
+    color: #fff;
+}
+
+.pagination {
+    overflow-x: scroll;
+}
+
+.pagination::-webkit-scrollbar {
+    width: 7px;
+}
+
+.pagination::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.pagination::-webkit-scrollbar-thumb {
+    background: white;
+    border: none;
+    border-radius: 10px;
+}
+
+.pagination::-webkit-scrollbar-thumb:hover {
+    border-radius: 15px;
+}
+
+.active {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.nonActive {
+    cursor: pointer;
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 100%;
+}
+
+.items::-webkit-scrollbar {
+    width: 7px;
+    z-index: 1111;
+}
+
+.items::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.items::-webkit-scrollbar-thumb {
+    background: white;
+    border: none;
+    border-radius: 10px;
+}
+
+.items::-webkit-scrollbar-thumb:hover {
+    border-radius: 15px;
+}
+
+
+/* ==> DAY <== */
+.container_day {
+    display: flex;
+    flex-direction: column;
+
+    width: 75%;
+    height: 85vh;
+    margin-left: 12.5%;
+
+    background: var(--color-content__day);
+    /*border: 1px solid lightgray;*/
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
 }
 
 .users {
