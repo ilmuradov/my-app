@@ -3,7 +3,6 @@ import classes from './Profile.module.css';
 import Preloader from "../Common/Preloader/Preloader";
 
 const Profile = (props) => {
-    console.log(props)
     if(!props.profile) {
         return <Preloader />
     }
@@ -25,7 +24,11 @@ const Profile = (props) => {
                                 {props.profile.lookingForAJob ?
                                     <div className={classes.looking}>
                                         <h4> Looking for job </h4>
-                                        <div className={classes.description}> <p> Job description: {props.profile.lookingForAJobDescription} </p> </div>
+                                        <div className={classes.description}>
+                                            <p>
+                                                <b> Job description: </b> {props.profile.lookingForAJobDescription}
+                                            </p>
+                                        </div>
                                     </div>
                                     :
                                     <p> Not looking for a job </p>
@@ -55,14 +58,18 @@ const Profile = (props) => {
                                 {props.profile.lookingForAJob ?
                                     <div className={classes.looking__day}>
                                         <h4> Looking for job </h4>
-                                        <div className={classes.description__day}> <p> Job description: {props.profile.lookingForAJobDescription} </p> </div>
+                                        <div className={classes.description__day}>
+                                            <p>
+                                                <b> Job description: </b> {props.profile.lookingForAJobDescription}
+                                            </p>
+                                        </div>
                                     </div>
                                     :
                                     <p> Not looking for a job </p>
                                 }
                             </div>
 
-                            <div>
+                            <div className={classes.aboutMe__day}>
                                 <p>{props.profile.aboutMe}</p>
                             </div>
                         </div>

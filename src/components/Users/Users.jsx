@@ -4,7 +4,6 @@ import UsersElements from "./Users-Elements/UsersElements";
 import Preloader from "../Common/Preloader/Preloader";
 
 const Users = (props) => {
-    console.log(props.isNight)
     const pagesCount = Math.ceil( props.totalCount / props.itemsOnPage );
     const pages = [];
     for( let i = 1; i <= pagesCount; i++) {
@@ -49,11 +48,11 @@ const Users = (props) => {
                         })}
                     </div>
 
-                    <div className={classes.users}>
+                    <div className={classes.users__day}>
                         <h3> Users: </h3>
                     </div>
 
-                    <div className={classes.items}>
+                    <div className={classes.items__day}>
                         { props.isFetching
                             ? <Preloader />
                             : props.users.map(m =>
@@ -62,7 +61,7 @@ const Users = (props) => {
                                             isOnline={m.status} followed={m.followed}
                                             isFollowingFetching={props.isFollowingFetching}
                                             toggleIsFollowingFetching={props.toggleIsFollowingFetching}
-                                            key={m.id}/>) }
+                                            key={m.id} followTC={props.followTC} unfollowTC={props.unfollowTC} />) }
                         {/*<button onClick={props.onButtonClick} className={classes.btn}> ... </button>*/}
                     </div>
                 </div>

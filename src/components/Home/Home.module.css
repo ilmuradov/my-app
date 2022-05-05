@@ -116,7 +116,7 @@
 }
 
 .postsContainer__day::-webkit-scrollbar-track {
-    background: transparent;
+    background: var(--color-body__day);
 }
 
 .postsContainer__day::-webkit-scrollbar-thumb {

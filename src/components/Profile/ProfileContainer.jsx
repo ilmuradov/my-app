@@ -1,7 +1,11 @@
 import React from 'react';
 import Profile from "./Profile";
 import {connect} from "react-redux";
-import {setUserProfile, toggleIsFetching, profilePageThunkCreator} from "../../redux/profile-reducer";
+import {
+    setUserProfile,
+    toggleIsFetching,
+    profilePageThunkCreator
+} from "../../redux/profile-reducer";
 import {useMatch} from "react-router-dom";
 
 
@@ -18,7 +22,7 @@ class ProfileContainer extends React.Component {
 
 const ProfileMatch = (props) => {
     let match = useMatch('/profile/:userId')
-    return <ProfileContainer {...props} match={match} />
+    return <ProfileContainer {...props} match={match}/>
 }
 
 const mapStateToProps = (state) => ({
@@ -27,6 +31,6 @@ const mapStateToProps = (state) => ({
     night: state.settings.night
 })
 
-export default connect(mapStateToProps, 
+export default connect(mapStateToProps,
     {setUserProfile, toggleIsFetching, profilePageThunkCreator})
-    (ProfileMatch);
+(ProfileMatch);

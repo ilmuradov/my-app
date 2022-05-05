@@ -102,7 +102,7 @@
     box-shadow: var(--box-shadow);
 }
 
-.users {
+.users__day {
     display: flex;
     justify-content: center;
     /*width: 100%;*/
@@ -111,9 +111,9 @@
     /*margin-left: 20%;*/
 }
 
-.users h3 {
+.users__day h3 {
     margin: auto auto auto 5%;
-    color: #fff;
+    color: var(--color-text__day);
 }
 
 .pagination {
@@ -147,28 +147,28 @@
     cursor: pointer;
 }
 
-.items {
+.items__day {
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
     height: 100%;
 }
 
-.items::-webkit-scrollbar {
+.items__day::-webkit-scrollbar {
     width: 7px;
     z-index: 1111;
 }
 
-.items::-webkit-scrollbar-track {
-    background: transparent;
+.items__day::-webkit-scrollbar-track {
+    background: var(--color-body__day);
 }
 
-.items::-webkit-scrollbar-thumb {
-    background: white;
+.items__day::-webkit-scrollbar-thumb {
+    background: var(--color-text__day);
     border: none;
     border-radius: 10px;
 }
 
-.items::-webkit-scrollbar-thumb:hover {
+.items__day::-webkit-scrollbar-thumb:hover {
     border-radius: 15px;
 }

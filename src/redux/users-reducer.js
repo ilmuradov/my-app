@@ -97,4 +97,21 @@ export const onSpanChangedThunkCreator = (m, itemsOnPage) => (dispatch) => {
         })
 }
 
+export const followThunkCreator = (userId) => (dispatch) => {
+    usersAPI.follow(userId)
+        .then(response => {
+            if(response.resultCode === 0) {
+                dispatch(follow(userId))
+            }
+        })
+}
+
+export const unfollowThunkCreator = (userId) => (dispatch) => {
+    usersAPI.unfollow(userId)
+        .then(response => {
+            if(response.resultCode === 0) {
+                dispatch(unfollow(userId))
+            }
+        })
+}
 export default usersReducer;

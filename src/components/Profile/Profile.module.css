@@ -97,19 +97,26 @@
 .photoNull__day {
     width: 150px;
     height: 150px;
-    background: var(--color-background__night);
+    background: var(--color-body__day);
     border-radius: 50%;
 }
 
 .fullName__day {
+    color: var(--color-text__day);
     font-size: 1.8rem;
 }
 
 .looking__day {
+    color: var(--color-text__day);
     display: flex;
     justify-content: space-between;
 }
 
 .description__day {
+    color: var(--color-text__day);
     width: 70%;
+}
+
+.aboutMe__day {
+    color: var(--color-text__day);
 }

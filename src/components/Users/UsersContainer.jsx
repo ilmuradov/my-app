@@ -6,7 +6,7 @@ import {
     setUsers,
     toggleIsFetching, toggleIsFollowingFetching,
     unfollow,
-    onSpanChangedThunkCreator
+    onSpanChangedThunkCreator, followThunkCreator, unfollowThunkCreator
 } from '../../redux/users-reducer';
 import Users from './Users';
 import React from "react";
@@ -35,7 +35,9 @@ class UsersContainer extends React.Component {
                       followed={this.props.followed}
                       toggleIsFollowingFetching={this.props.toggleIsFollowingFetching}
                       isFollowingFetching={this.props.isFollowingFetching}
-                      isNight={this.props.night}/>;
+                      isNight={this.props.night}
+                      followTC={this.props.followThunkCreator}
+                      unfollowTC={this.props.unfollowThunkCreator}  />;
     }
 }
 
@@ -84,5 +86,7 @@ export default connect(mapStateToProps, {
     toggleIsFetching,
     toggleIsFollowingFetching,
     getUsersThunkCreator,
-    onSpanChangedThunkCreator
+    onSpanChangedThunkCreator,
+    followThunkCreator,
+    unfollowThunkCreator
 })(UsersContainer);

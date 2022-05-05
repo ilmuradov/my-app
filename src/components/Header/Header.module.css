@@ -1,22 +1,24 @@
 .container {
-    position: fixed;
+    /*position: fixed;*/
     display: flex;
     width: 30%;
     height: 60px;
     /*margin-left: 35%;*/
-    margin-top: 1.5vh;
+    margin-top: auto;
+    margin-bottom: 1.5vh;
     background: var(--color-background__night);
     border-radius: 10px;
     /*border-bottom: 1px solid lightgrey;*/
 }
 
 .container__day {
-    position: fixed;
+    /*position: fixed;*/
     display: flex;
     width: 30%;
     height: 60px;
     /*margin-left: 35%;*/
-    margin-top: 1.5vh;
+    margin-top: auto;
+    margin-bottom: 1.5vh;
     background: var(--color-background__day);
     border-radius: 10px;
     box-shadow: var(--box-shadow);
