@@ -55,7 +55,7 @@
 }
 
 .messages::-webkit-scrollbar {
-    width: 7px;
+    width: 4px;
 }
 
 .messages::-webkit-scrollbar-track {
@@ -128,7 +128,7 @@
 }
 
 .messages__day::-webkit-scrollbar {
-    width: 7px;
+    width: 4px;
 }
 
 .messages__day::-webkit-scrollbar-track {

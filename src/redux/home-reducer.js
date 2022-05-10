@@ -1,3 +1,5 @@
+import { homeAPI } from "../API/homeAPI";
+
 const SET_POSTS = 'SET_POSTS';
 const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
 const SET_TOTAL_COUNT = 'SET_TOTAL_COUNT';
@@ -30,5 +32,35 @@ export let setPosts = (post) => ({ type: SET_POSTS, post });
 export let toggleIsFetching = (isFetching) => ({ type: TOGGLE_IS_FETCHING, isFetching });
 export let setTotalCount = (totalCount) => ({ type: SET_TOTAL_COUNT, totalCount });
 export let setCurrentPage = (currentPage) => ({ type: SET_CURRENT_PAGE, currentPage });
+
+export const getPostsTC = (posts, currentPage, itemsOnPage) => (dispatch) => {
+    if (posts.length === 0) {
+        dispatch(toggleIsFetching(true));
+        homeAPI.getUsers(currentPage, itemsOnPage)
+            .then(response => {
+                response.items.map(m => {
+                    if (m.status) {
+                        dispatch(setPosts(m))
+                    }
+                })
+                dispatch(toggleIsFetching(false))
+                dispatch(setTotalCount(response.totalCount))
+            });
+    }
+}
+
+export const getNewPostsTC = (currentPage, itemsOnPage) => (dispatch) => {
+    // debugger
+    const newCurrentPage = currentPage;
+    dispatch(setCurrentPage(newCurrentPage + 1))
+    homeAPI.getNewPosts(currentPage, itemsOnPage)
+        .then(response => {
+            response.items.map(m => {
+                if(m.status) {
+                    dispatch(setPosts(m))
+                }
+            })
+        })
+}
 
 export default homeReducer;

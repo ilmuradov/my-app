@@ -12,7 +12,7 @@ const Settings = (props) => {
         <div className={props.night ? classes.container__night : classes.container__day}>
             {props.night ?
                 <>
-                    <div className={classes.h_container__night}><h1> Settings </h1></div>
+                    <div className={classes.h_container__night}> <h1> Settings </h1> </div>
                     <div className={classes.subContainer}>
                         <div className={classes.dayNight__night}>
                             <p> Night theme </p>
@@ -22,9 +22,11 @@ const Settings = (props) => {
                         </div>
                     </div>
                 </>
+
                 :
+
                 <>
-                    <div className={classes.h_container__day}><h1> Settings </h1></div>
+                    <div className={classes.h_container__day}> <h1> Settings </h1> </div>
                     <div className={classes.subContainer}>
                         <div className={classes.dayNight__day}>
                             <p> Night theme </p>

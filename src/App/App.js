@@ -8,6 +8,8 @@ import HeaderContainer from "../components/Header/HeaderContainer";
 import HomeContainer from "../components/Home/HomeContainer";
 import SettingsContainer from "../components/Settings/SettingsContainer";
 import MessagesContainer from "../components/Messages/MessagesContainer";
+import Login from "../components/Login/Login";
+import ProfileMatch from "../components/Profile/ProfileContainer";
 
 const App = (props) => {
 
@@ -18,13 +20,14 @@ const App = (props) => {
                     <div className={classes.app_wrapper__night}>
                         <div className={classes.app_wrapper__content}>
                             <Routes>
-                                <Route path='/profile' element={<ProfileContainer />} />
-                                <Route path='/profile/*' element={<ProfileContainer />} />
+                                {/*<Route path='/profile' element={<ProfileMatch />} />*/}
+                                <Route path='/profile/*' element={<ProfileMatch />} />
                                 <Route path='/messages' element={<MessagesContainer />}/>
                                 <Route path='/newPost' element={<SettingsContainer />}/>
                                 <Route path='/home' element={<HomeContainer />}/>
                                 <Route path='/activity' element={<Music />}/>
                                 <Route path='/users' element={<UsersContainer />}/>
+                                <Route path='/login' element={<Login />}/>
                             </Routes>
                         </div>
 

@@ -30,7 +30,7 @@ const UsersElements = (props) => {
             {props.night ?
                 <div className={classes.container}>
                     <div className={classes.photoAndName}>
-                        <img className={classes.photo} src={props.userPhoto != null ? props.userPhoto : userPhoto} />
+                        <img alt='' className={classes.photo} src={props.userPhoto != null ? props.userPhoto : userPhoto} />
                         <NavLink to={`/profile/${props.userId}`} className={classes.name}>
                             <h4> {props.name} {props.surname} </h4>
                         </NavLink>
@@ -43,14 +43,13 @@ const UsersElements = (props) => {
                         ? <p> Unfollow </p>
                         : <p> Follow </p>}
                     </button>
-                    {/*<button className={classes.followed} onClick={changeFollow}> {isFollowed()} </button>*/}
                 </div>
 
                 :
 
                 <div className={classes.container__day}>
                     <div className={classes.photoAndName__day}>
-                        <img className={classes.photo__day} src={props.userPhoto != null ? props.userPhoto : userPhoto} />
+                        <img alt='' className={classes.photo__day} src={props.userPhoto != null ? props.userPhoto : userPhoto} />
                         <NavLink to={`/profile/${props.userId}`} className={classes.name__day}>
                             <h4> {props.name} {props.surname} </h4>
                         </NavLink>
@@ -63,7 +62,6 @@ const UsersElements = (props) => {
                         ? <p> Unfollow </p>
                         : <p> Follow </p>}
                     </button>
-                    {/*<button className={classes.followed} onClick={changeFollow}> {isFollowed()} </button>*/}
                 </div>
             }
         </>

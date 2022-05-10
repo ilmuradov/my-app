@@ -7,6 +7,8 @@ import {
     profilePageThunkCreator
 } from "../../redux/profile-reducer";
 import {useMatch} from "react-router-dom";
+import {withNavigate} from "../../hoc/withNavigate";
+import {compose} from "redux";
 
 
 class ProfileContainer extends React.Component {
@@ -31,6 +33,8 @@ const mapStateToProps = (state) => ({
     night: state.settings.night
 })
 
-export default connect(mapStateToProps,
-    {setUserProfile, toggleIsFetching, profilePageThunkCreator})
-(ProfileMatch);
+export default compose(
+    connect(mapStateToProps,
+        {setUserProfile, toggleIsFetching, profilePageThunkCreator}),
+    withNavigate
+) (ProfileMatch)

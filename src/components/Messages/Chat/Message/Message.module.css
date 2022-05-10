@@ -1,7 +1,6 @@
 /* ==> NIGHT <== */
 .item {
     display: flex;
-
     margin: 10px 3px 3px 10px;
 
     width: fit-content;
@@ -10,6 +9,7 @@
 
     background: transparent;
     transition: .2s ease-in-out;
+    animation: pinMessage .3s;
 }
 
 .avatar {
@@ -31,8 +31,7 @@
 
 .text {
     width: auto;
-    margin: auto;
-    margin-left: 5px;
+    margin: auto auto auto 5px;
 
     padding: 15px;
     background: white;
@@ -40,6 +39,7 @@
     border-radius: 20px;
     font-size: 1rem;
     color: var(--color-body__night);
+    animation: pinMessage .4s;
 }
 
 
@@ -55,6 +55,7 @@
 
     background: transparent;
     transition: .2s ease-in-out;
+    animation: pinMessage .3s;
 }
 
 .avatar__day {
@@ -84,4 +85,10 @@
     border-radius: 20px;
     font-size: 1rem;
     color: var(--color-text__day);
+    animation: pinMessage .3s;
+}
+
+@keyframes pinMessage {
+    from {opacity: 0}
+    to {opacity: 1}
 }

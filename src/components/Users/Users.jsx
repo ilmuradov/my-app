@@ -13,7 +13,7 @@ const Users = (props) => {
     return (
         <>
             {
-            props.isNight ? 
+            props.night ?
                 <div className={classes.container}>
                     <div className={classes.pagination}>
                         {pages.map(m => {
@@ -30,11 +30,12 @@ const Users = (props) => {
                             ? <Preloader />
                             : props.users.map(m =>
                                 <UsersElements follow={props.follow} unfollow={props.unfollow}
-                                            userId={m.id} userPhoto={m.photos.small} name={m.name}
-                                            isOnline={m.status} followed={m.followed}
-                                            isFollowingFetching={props.isFollowingFetching}
-                                            toggleIsFollowingFetching={props.toggleIsFollowingFetching}
-                                            key={m.id}/>) }
+                                               userId={m.id} userPhoto={m.photos.small} name={m.name}
+                                               isOnline={m.status} followed={m.followed}
+                                               isFollowingFetching={props.isFollowingFetching}
+                                               toggleIsFollowingFetching={props.toggleIsFollowingFetching}
+                                               key={m.id} followTC={props.followTC} unfollowTC={props.unfollowTC}
+                                               night={props.night} />) }
                         {/*<button onClick={props.onButtonClick} className={classes.btn}> ... </button>*/}
                     </div>
                 </div>
@@ -42,7 +43,7 @@ const Users = (props) => {
                 :
 
                 <div className={classes.container_day}>
-                    <div className={classes.pagination}>
+                    <div className={classes.pagination__day}>
                         {pages.map(m => {
                             return <span onClick={() => {props.onSpanChanged(m)}} className={props.currentPage === m ? classes.active : classes.nonActive} key={m}> {m} </span>
                         })}
@@ -61,7 +62,8 @@ const Users = (props) => {
                                             isOnline={m.status} followed={m.followed}
                                             isFollowingFetching={props.isFollowingFetching}
                                             toggleIsFollowingFetching={props.toggleIsFollowingFetching}
-                                            key={m.id} followTC={props.followTC} unfollowTC={props.unfollowTC} />) }
+                                            key={m.id} followTC={props.followTC} unfollowTC={props.unfollowTC}
+                                            night={props.night} />) }
                         {/*<button onClick={props.onButtonClick} className={classes.btn}> ... </button>*/}
                     </div>
                 </div>

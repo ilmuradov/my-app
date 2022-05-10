@@ -35,7 +35,7 @@ class UsersContainer extends React.Component {
                       followed={this.props.followed}
                       toggleIsFollowingFetching={this.props.toggleIsFollowingFetching}
                       isFollowingFetching={this.props.isFollowingFetching}
-                      isNight={this.props.night}
+                      night={this.props.night}
                       followTC={this.props.followThunkCreator}
                       unfollowTC={this.props.unfollowThunkCreator}  />;
     }

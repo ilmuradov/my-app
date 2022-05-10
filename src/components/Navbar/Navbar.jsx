@@ -12,10 +12,10 @@ import messages__active from './../../assets/images/Messages/messenger__active.p
 import messages_day from './../../assets/images/Messages/messenger_day.png'
 import messages__active_day from './../../assets/images/Messages/messenger__active_day.png'
 
-import newPost from '../../assets/images/New-Post/new_post.png'
-import newPost__active from '../../assets/images/New-Post/new_post__active.png'
-import newPost_day from '../../assets/images/New-Post/new_post_day.png'
-import newPost__active_day from '../../assets/images/New-Post/new_post__active_day.png'
+import settings__day from '../../assets/images/New-Post/settings__day.png'
+import settings_active__day from '../../assets/images/New-Post/settings_active__day.png'
+import settings__night from '../../assets/images/New-Post/settings__night.png'
+import settings_active__night from '../../assets/images/New-Post/settings_active__night.png'
 
 import explore from '../../assets/images/Explore/explore.png'
 import explore__active from '../../assets/images/Explore/explore__active.png'
@@ -57,9 +57,9 @@ const Navbar = (props) => {
             <div className={classes.item}>
                 <NavLink to='/newPost' onClick={() => {props.toggleAddNew(true)}}>
                     {props.night ?
-                        <img alt='' src={props.addNew ? newPost__active : newPost}/>
+                        <img alt='' src={props.addNew ? settings_active__night : settings__night}/>
                         :
-                        <img alt='' src={props.addNew ? newPost__active_day : newPost_day}/>
+                        <img alt='' src={props.addNew ? settings_active__day : settings__day}/>
                     }
                 </NavLink>
             </div>

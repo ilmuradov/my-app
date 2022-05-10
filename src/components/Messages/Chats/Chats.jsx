@@ -2,7 +2,7 @@ import Dialogs from './Dialogs/Dialogs';
 import classes from './Chats.module.css';
 
 const Chats = (props) => {
-    const dialogsElements = props.items.map(d => <Dialogs name={d.name} id={d.id} />)
+    const dialogsElements = props.items.map(d => <Dialogs name={d.name} id={d.id} night={props.night} />)
 
     return (
         <>

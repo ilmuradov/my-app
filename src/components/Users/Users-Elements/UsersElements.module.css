@@ -1,12 +1,13 @@
+/* ==> NIGHT <== */
 .container {
     display: flex;
     justify-content: space-between;
 
     padding: 5px 10px;
-    width: 100%;
+    width: auto;
 
     /*border-radius: 5px;*/
-    /*background: #000d85;*/
+    /*background: var(--color-background__night);*/
     cursor: pointer;
 }
 

@@ -2,25 +2,13 @@ import React from 'react';
 import Header from "./Header";
 import {connect} from "react-redux";
 import {setAuthData} from "../../redux/auth-reducer";
-import {setHeaderInfo, toggleIsFetching} from "../../redux/header-reducer";
+import {authMeThunkCreator, setHeaderInfo, toggleIsFetching} from "../../redux/header-reducer";
 import {toggleAddNew, toggleExplore, toggleHome, toggleLikes, toggleMessages,} from "../../redux/navbar-reducer";
-import {usersAPI} from "../../API/usersAPI";
+import { compose } from 'redux'
 
 class HeaderContainer extends React.Component{
     componentDidMount() {
-            usersAPI.authMe()
-            .then(response => {
-                let {email, id, login} = response.data;
-                if(response.resultCode === 0) {
-                    this.props.setAuthData({login, email, userId: id})
-                }
-                this.props.toggleIsFetching(true)
-                    usersAPI.getProfilePhoto(id)
-                    .then(response => {
-                        this.props.setHeaderInfo(response.small)
-                        this.props.toggleIsFetching(false)
-                    })
-            });
+        this.props.authMeThunkCreator()
     }
 
     render() {
@@ -29,7 +17,6 @@ class HeaderContainer extends React.Component{
 }
 
 const mapStateToProps = (state) => ({
-    isAuth: state.auth.isAuth,
     photo: state.header.info,
     isFetching: state.header.isFetching,
     night: state.settings.night,
@@ -41,8 +28,9 @@ const mapStateToProps = (state) => ({
     profile: state.navbar.profile
 })
 
-export default connect(mapStateToProps, 
+export default compose(
+    connect(mapStateToProps, 
     {setAuthData, setHeaderInfo, 
     toggleIsFetching,toggleHome, toggleMessages,
     toggleAddNew, toggleExplore,
-    toggleLikes})(HeaderContainer);
+    toggleLikes, authMeThunkCreator}))(HeaderContainer);

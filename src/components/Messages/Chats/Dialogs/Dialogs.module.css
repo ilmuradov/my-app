@@ -1,3 +1,4 @@
+/* ==> NIGHT <== */
 .item {
     display: flex;
     width: 100%;
@@ -59,4 +60,71 @@
     margin-bottom: auto;
     font-size: .8rem;
     color: #fff;
+}
+
+
+
+
+/* ==> DAY <== */
+.item__day {
+    display: flex;
+    width: 100%;
+    height: 70px;
+
+    /*border-bottom: 1px solid white;*/
+}
+
+.item__day:hover {
+    background-color: var(--color-body__day);
+}
+
+.navLink__day {
+    margin: auto;
+    display: flex;
+    cursor: pointer;
+    text-decoration: none;
+    /* padding:; */
+}
+
+.new__day {
+    margin: auto auto auto 5px;
+    width: 10px;
+    height: 10px;
+    background-color: var(--color-text__day);
+    border-radius: 50%;
+}
+
+.photo__day {
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+
+    width: 55px;
+    height: 55px;
+    background: var(--color-body__day);
+    border-radius: 50%;
+}
+
+.container__day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+}
+
+.name__day {
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: auto;
+    color: var(--color-text__day);
+}
+
+.text__day {
+    width: 100%;
+    overflow: clip;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: .8rem;
+    color: var(--color-text__day);
 }

@@ -2,6 +2,7 @@ import { usersAPI } from "../API/usersAPI";
 
 const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
 const SET_USER_PROFILE = 'SET_USER_PROFILE';
+const SET_USER_ID = 'SET_USER_ID';
 
 const stateInitial = {
     profile: null,
@@ -22,17 +23,24 @@ const profileReducer = (state = stateInitial, action) => {
                 profile: action.profile
             }
         }
+        case SET_USER_ID: {
+            return {
+                ...state,
+                id: action.id
+            }
+        }
         default: 
             return state;
     }
 }
 
 export let setUserProfile = (profile) => ({ type: SET_USER_PROFILE, profile });
+export let setId = (id) => ({ type: SET_USER_ID, id });
 export let toggleIsFetching = (isFetching) => ({ type: TOGGLE_IS_FETCHING, isFetching });
 
 export const profilePageThunkCreator = (userId) => (dispatch) => {
     dispatch(toggleIsFetching(true))
-        usersAPI.getAuthUser(userId)
+        usersAPI.getUserProfile(userId)
         .then(response => {
             dispatch(setUserProfile(response))
             dispatch(toggleIsFetching(true))
