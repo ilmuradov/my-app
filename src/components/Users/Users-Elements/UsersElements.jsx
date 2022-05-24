@@ -2,7 +2,6 @@ import React from 'react';
 import classes from './UsersElements.module.css';
 import userPhoto from '../../../assets/images/user.png'
 import {NavLink} from "react-router-dom";
-import {usersAPI} from "../../../API/usersAPI";
 
 const UsersElements = (props) => {
     // const changeFollow = () => {

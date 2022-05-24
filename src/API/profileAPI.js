@@ -13,10 +13,10 @@ export const profileAPI = {
         return instance.get(`profile/${userId}`)
     },
     getStatus(userId) {
-        return instance.get(`profile/status/${userId}`)
+        return instance.get(`profile/status/${userId}`).then(res => res.data)
     },
-    updateStatus() {
-        return instance.put(`profile/status`)
+    updateStatus(status) {
+        return instance.put(`profile/status`, {status}).then(res => res.data)
     },
     authMe() {
         return instance.get(`auth/me`)

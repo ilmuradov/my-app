@@ -8,6 +8,7 @@ import navbarReducer from "./navbar-reducer";
 import homeReducer from "./home-reducer";
 import settingsReducer from "./settings-reducer";
 import thunk from "redux-thunk";
+import { reducer as formReducer } from "redux-form";
 
 let reducers = combineReducers({
     homePage: homeReducer,
@@ -17,7 +18,8 @@ let reducers = combineReducers({
     auth: authReducer,
     header: headerReducer,
     navbar: navbarReducer,
-    settings: settingsReducer
+    settings: settingsReducer,
+    form: formReducer
 })
  
 let store = createStore(reducers, applyMiddleware(thunk));

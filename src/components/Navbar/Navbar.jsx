@@ -55,7 +55,7 @@ const Navbar = (props) => {
             </div>
 
             <div className={classes.item}>
-                <NavLink to='/newPost' onClick={() => {props.toggleAddNew(true)}}>
+                <NavLink to='/settings' onClick={() => {props.toggleAddNew(true)}}>
                     {props.night ?
                         <img alt='' src={props.addNew ? settings_active__night : settings__night}/>
                         :

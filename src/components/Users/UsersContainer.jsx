@@ -1,26 +1,25 @@
 import { connect } from 'react-redux';
 import {
-    follow, getUsersThunkCreator,
+    follow, getUsers,
     setCurrentPage,
     setTotalCount,
     setUsers,
     toggleIsFetching, toggleIsFollowingFetching,
     unfollow,
-    onSpanChangedThunkCreator, followThunkCreator, unfollowThunkCreator
+    onSpanChanged, followTC, unfollowTC
 } from '../../redux/users-reducer';
 import Users from './Users';
 import React from "react";
-import {default as axios} from "axios";
 
 class UsersContainer extends React.Component {
     componentDidMount() {
         if(this.props.users.length === 0) {
-            this.props.getUsersThunkCreator(this.props.currentPage, this.props.itemsOnPage)
+            this.props.getUsers(this.props.currentPage, this.props.itemsOnPage)
         }
     }
 
     onSpanChanged = (m) => {
-        this.props.onSpanChangedThunkCreator(m, this.props.itemsOnPage)
+        this.props.onSpanChanged(m, this.props.itemsOnPage)
     }
 
     render() {
@@ -36,8 +35,8 @@ class UsersContainer extends React.Component {
                       toggleIsFollowingFetching={this.props.toggleIsFollowingFetching}
                       isFollowingFetching={this.props.isFollowingFetching}
                       night={this.props.night}
-                      followTC={this.props.followThunkCreator}
-                      unfollowTC={this.props.unfollowThunkCreator}  />;
+                      followTC={this.props.followTC}
+                      unfollowTC={this.props.unfollowTC}  />;
     }
 }
 
@@ -85,8 +84,8 @@ export default connect(mapStateToProps, {
     setTotalCount,
     toggleIsFetching,
     toggleIsFollowingFetching,
-    getUsersThunkCreator,
-    onSpanChangedThunkCreator,
-    followThunkCreator,
-    unfollowThunkCreator
+    getUsers,
+    onSpanChanged,
+    followTC,
+    unfollowTC
 })(UsersContainer);

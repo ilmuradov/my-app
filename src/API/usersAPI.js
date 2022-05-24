@@ -1,4 +1,5 @@
 import {default as axios} from "axios";
+import { profileAPI } from "./profileAPI";
 
 const instance = axios.create({
     baseURL: 'https://social-network.samuraijs.com/api/1.0/',
@@ -26,8 +27,8 @@ export const usersAPI = {
             .then(response => response.data)
     },
     getUserProfile(userId) {
-        return instance.get(`profile/${userId}`)
-            .then(response => response.data)
+        console.warm('Use profileAPI!')
+        return profileAPI.getProfile(userId)
     },
     authMe() {
         return instance.get(`auth/me`)

@@ -28,6 +28,17 @@
     color: #fff;
 }
 
+.username {
+    display: flex;
+    width: 100%;
+    /* justify-content: space-between; */
+}
+
+.username h4 {
+    margin: auto;
+    margin-right: 0;
+}
+
 .avatarPhoto {
     display: flex;
     width: 150px;

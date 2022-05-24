@@ -1,6 +1,8 @@
 import React from 'react';
 import classes from './Profile.module.css';
-import Preloader from "../Common/Preloader/Preloader";
+import Preloader from '../Common/Preloader/Preloader';
+import ProfileStatus from './ProfileStatus'
+import ProfilePhoto from './ProfilePhoto';
 
 const Profile = (props) => {
     if(!props.profile) {
@@ -13,31 +15,39 @@ const Profile = (props) => {
                 <div className={classes.profile}>
                     <div className={classes.container}>
                         {props.profile.photos.large ?
-                            <img alt='' className={classes.avatarPhoto} src={props.profile.photos.large}/>
+                            <ProfilePhoto src={props.profile.photos.large} />
                             :
-                            <div className={classes.photoNull}></div>}
+                            <div className={classes.photoNull}></div>
+                        }
 
                         <div className={classes.info}>
-                            <h2 className={classes.fullName}> {props.profile.fullName} </h2>
-
+                            <div className={classes.username}>
+                                <h2 className={classes.fullName}> {props.profile.fullName} </h2>
+                                {props.profile.lookingForAJob ? <h4> Looking for a job </h4> : null}
+                            </div>
                             <div>
                                 {props.profile.lookingForAJob ?
-                                    <div className={classes.looking}>
-                                        <h4> Looking for job </h4>
-                                        <div className={classes.description}>
-                                            <p>
-                                                <b> Job description: </b> {props.profile.lookingForAJobDescription}
-                                            </p>
-                                        </div>
-                                    </div>
+                                    <p>
+                                        <b> Job description: </b> {props.profile.lookingForAJobDescription}
+                                    </p>
                                     :
                                     <p> Not looking for a job </p>
                                 }
                             </div>
 
-                            <div>
-                                <p>{props.profile.aboutMe}</p>
+                            <div className={classes.statusPlace}>
+                                <h4> Status: </h4>
+                                <ProfileStatus status={props.status} updateStatus={props.updateStatus} />
                             </div>
+
+                            { props.profile.aboutMe ? 
+                                <div>
+                                    <h3> About me: </h3>
+                                    <p> {props.profile.aboutMe} </p>
+                                </div>
+                                :
+                                null
+                            }
                         </div>
                     </div>
                 </div>

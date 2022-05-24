@@ -77,7 +77,7 @@ export let setTotalCount = (totalCount) => ({ type: SET_TOTAL_COUNT, totalCount 
 export let toggleIsFetching = (isFetching) => ({ type: TOGGLE_IS_FETCHING, isFetching });
 export let toggleIsFollowingFetching = (isFetching) => ({ type: TOGGLE_IS_FOLLOWING_FETCHING, isFetching });
 
-export const getUsersThunkCreator = (currentPage, itemsOnPage) => (dispatch) => {
+export const getUsers = (currentPage, itemsOnPage) => (dispatch) => {
     dispatch(toggleIsFetching(true));
     usersAPI.getUsers(currentPage, itemsOnPage)
         .then(response => {
@@ -87,7 +87,7 @@ export const getUsersThunkCreator = (currentPage, itemsOnPage) => (dispatch) => 
         });
 }
 
-export const onSpanChangedThunkCreator = (m, itemsOnPage) => (dispatch) => {
+export const onSpanChanged = (m, itemsOnPage) => (dispatch) => {
     dispatch(setCurrentPage(m))
     dispatch(toggleIsFetching(true))
     usersAPI.onSpanChanged(m, itemsOnPage)
@@ -97,7 +97,7 @@ export const onSpanChangedThunkCreator = (m, itemsOnPage) => (dispatch) => {
         })
 }
 
-export const followThunkCreator = (userId) => (dispatch) => {
+export const followTC = (userId) => (dispatch) => {
     usersAPI.follow(userId)
         .then(response => {
             if(response.resultCode === 0) {
@@ -106,7 +106,7 @@ export const followThunkCreator = (userId) => (dispatch) => {
         })
 }
 
-export const unfollowThunkCreator = (userId) => (dispatch) => {
+export const unfollowTC = (userId) => (dispatch) => {
     usersAPI.unfollow(userId)
         .then(response => {
             if(response.resultCode === 0) {
