@@ -1,0 +1,26 @@
+.status {
+    padding: 0;
+    /* transition: .3s; */
+}
+
+.statusEdit {
+    width: 100%;
+    padding: 0px 0px;
+}
+
+.statusInput {
+    font-size: 1rem;
+    color: white;
+    background: none;
+    width: 100%;
+}
+
+.statusInput:focus {
+    border: none;
+    outline: none;
+    background: none;
+    color: white;
+    font-weight: lighter;
+    font-size: 1.2rem;
+    transition: .3s;
+}
