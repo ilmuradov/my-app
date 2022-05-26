@@ -5,21 +5,10 @@ import classes from './Messages.module.css';
 
 const Messages = (props) => {
     return (
-        <>
-            {props.night ?
-                <div className={classes.container}>
-                    <Chats  night={props.night} items={props.itemsChats} />
-                    <Chat   night={props.night} items={props.itemsChat} value={props.value}
-                            sendMessage={props.sendMessage} typeMessage={props.typeMessage} />
-                </div>
-                :
-                <div className={classes.container__day}>
-                    <Chats  night={props.night} items={props.itemsChats} />
-                    <Chat   night={props.night} items={props.itemsChat} value={props.value}
-                            sendMessage={props.sendMessage} typeMessage={props.typeMessage} />
-                </div>
-            }
-        </>
+            <div className={props.night ? classes.container : classes.container__day}>
+                <Chats  night={props.night} items={props.itemsChats} />
+                <Chat   night={props.night} items={props.itemsChat} sendMessage={props.sendMessage} />
+            </div>
     )
 }
 

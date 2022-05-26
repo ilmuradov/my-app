@@ -125,3 +125,9 @@
     margin-bottom: 3px;
     color: silver;
 }
+
+
+/* ==> DAY <== */
+.container__day {
+    background: var(--color-background-day);
+}

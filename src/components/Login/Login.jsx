@@ -1,5 +1,12 @@
 import classes from './Login.module.css'
-import {Field, reduxForm} from "redux-form";
+import {Field, reduxForm} from 'redux-form';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
+import { maxLengthCreator, minLengthCreator, required } from '../../utils/validators';
+import { Input } from '../Common/Forms/Input';
+
+const minLength = minLengthCreator(8);
+const maxLength = maxLengthCreator(20);
 
 const Login = (props) => {
     const onSubmit = (formData) => {
@@ -7,12 +14,12 @@ const Login = (props) => {
     }
 
     return (
-        <div className={classes.container}>
+        <div className={props.night ? classes.container : classes.container__day}>
             <div className={classes.h_container}>
                 <h1> Login </h1>
             </div>
         <div className={classes.formContainer}>
-            <ReduxLoginForm onSubmit={onSubmit} />
+            <ReduxLoginForm nameTouched={props.nameTouched} onSubmit={onSubmit} />
             <Welcome />
         </div>
 
@@ -31,12 +38,12 @@ const Welcome = () => {
 }
 
 const LoginForm = (props) => {
-    console.log(props)
+    // console.log(props)
     return (
         <form onSubmit={props.handleSubmit} className={classes.form}>
             <h2> Please enter your accaunt data </h2>
-            <div className={classes.inputDiv}> <Field component={'input'} name={'name'} placeholder={'name'} type={'text'} /> </div>
-            <div className={classes.inputDiv}> <Field component={'input'} name={'password'} placeholder={'password'} type={'password'} /> </div>
+            <Field component={Input} name="name" placeholder="name" validate={[required, maxLength]} />
+            <Field component={Input} name={'password'} placeholder={'password'} type={'password'} validate={[required, minLength]} />
             <label className={classes.checkboxDiv}> <Field component={'input'} name={'checkbox'} type={'checkbox'} /> <p> Remember me </p> </label>
             <button className={classes.btn}> Submit </button>
         </form>
@@ -48,4 +55,10 @@ const ReduxLoginForm = reduxForm({
 })(LoginForm)
 
 
-export default Login;
+const mapStateToProps = (state) => ({
+    night: state.settings.night
+})
+
+export default compose(
+    connect(mapStateToProps)
+)(Login);

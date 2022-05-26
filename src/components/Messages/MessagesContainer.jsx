@@ -1,7 +1,7 @@
 import React from "react";
 import {connect} from "react-redux";
 import Messages from "./Messages";
-import { sendMessage, typeMessage, } from '../../redux/dialog-reducer';
+import { sendMessage } from '../../redux/dialog-reducer';
 import {Navigate} from "react-router-dom";
 import {compose} from "redux";
 import {withNavigate} from "../../hoc/withNavigate";
@@ -22,12 +22,16 @@ const mapStateToProps = (state) => ({
     itemsChats: state.messagesPage.chats,
 
     // Chat
-    itemsChat: state.messagesPage.chat,
-    value: state.messagesPage.newMessage
+    itemsChat: state.messagesPage.chat
 })
 
+const mapDispatchToProps = (dispatch) => ({
+    sendMessage: (value) => {
+        dispatch(sendMessage(value))
+    }
+})
 
 export default compose(
-    connect(mapStateToProps, {sendMessage, typeMessage}),
+    connect(mapStateToProps, mapDispatchToProps),
     withNavigate
 )(MessagesContainer);

@@ -21,7 +21,7 @@ const App = (props) => {
                     <Route path='/' element={<ProfileMatch />} />
                     <Route path='/home' element={<Home />} />
                     <Route path='/profile/*' element={<ProfileMatch />} />
-                    <Route path='/messages' element={<Messages />} />
+                    <Route path='/messages/*' element={<Messages />} />
                     <Route path='/settings' element={<Settings />} />
                     <Route path='/users' element={<Users />} />
                     <Route path='/login' element={<Login />} />

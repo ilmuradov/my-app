@@ -24,10 +24,7 @@ const Chat = (props) => {
                         {messagesElements}
                     </div>
 
-                    <SendMessage sendMessage={props.sendMessage}
-                                 typeMessage = {props.typeMessage}
-                                 value={props.value}
-                                 night={props.night} />
+                    <SendMessage sendMessage={props.sendMessage} night={props.night} />
                 </div>
                 :
                 <div className={classes.container__day}>
@@ -42,10 +39,7 @@ const Chat = (props) => {
                         {messagesElements}
                     </div>
 
-                    <SendMessage sendMessage={props.sendMessage}
-                                 typeMessage = {props.typeMessage}
-                                 value={props.value}
-                                 night={props.night} />
+                    <SendMessage sendMessage={props.sendMessage} night={props.night} />
                 </div>
             }
         </>

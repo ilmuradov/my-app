@@ -23,26 +23,18 @@ const stateInitial = {
 const dialogReducer = (state = stateInitial, action) => {
     switch (action.type) {
         case SEND_MESSAGE:
-            const text = state.newMessage;
+            const text = action.message;
             return {
                 ...state,
                 chat: [
                     ...state.chat, 
                     {message: text}
-                ],
-                newMessage: ''
-            }
-        case TYPE_MESSAGE:
-            return {
-                ...state,
-                newMessage: action.message
+                ]
             }
         default: 
             return state;
     }
 }
 
-export let sendMessage = () => ({ type: SEND_MESSAGE});
-export let typeMessage = (text) => ({ type:TYPE_MESSAGE, message: text });
-
+export let sendMessage = (message) => ({ type: SEND_MESSAGE,  message});
 export default dialogReducer;

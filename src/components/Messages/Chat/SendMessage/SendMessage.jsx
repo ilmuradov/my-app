@@ -1,36 +1,41 @@
 import React from 'react'
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+import { reduxForm, Field } from 'redux-form';
+import { maxLengthCreator } from '../../../../utils/validators';
 import classes from './SendMessage.module.css'
 
-const SendMessage = (props) => {
-    const sendMessage = () => {
-        props.sendMessage();
-    }
+const maxLength = maxLengthCreator(5);
 
-    const typeMessage = (e) => {
-        e = e.target.value;
-        props.typeMessage(e);
+const SendMessage = (props) => {
+    const onSubmit = (values) => {
+        props.sendMessage(values.message)
     }
 
     return (
-        <>
-            {props.night ?
-                <div className={classes.container}>
-                    <div className={classes.subcontainer}>
-                        <input onChange={typeMessage} type="text" value={props.value} placeholder='Message...' className={classes.input} />
-                        <button className={classes.button} onClick={sendMessage}> Send </button>
-                    </div>
-                </div>
-                :
-                <div className={classes.container__day}>
-                    <div className={classes.subcontainer__day}>
-                        <input onChange={typeMessage} type="text" value={props.value} placeholder='Message...' className={classes.input__day} />
-                        <button className={classes.button__day} onClick={sendMessage}> Send </button>
-                    </div>
-                </div>
-
-            }
-        </>
+            <div className={props.night ? classes.container : classes.container__day}>
+                <ReduxSendMessage onSubmit={onSubmit} night={props.night} />
+            </div>
     )
 }
 
-export default SendMessage;
+const SendMessageForm = (props) => {
+    return (
+        <form onSubmit={props.handleSubmit} className={props.night ? classes.subcontainer : classes.subcontainer__day}>
+            <Field className={classes.input} validate={[maxLength]} component={'input'} name={'message'} placeholder={'Message...'} />
+            <button className={props.night ? classes.button : classes.button__day}> Send </button>
+        </form>
+    )
+}
+
+const ReduxSendMessage = reduxForm({
+    form: 'typeMessage'
+})(SendMessageForm)
+
+const mapDispatchToProps = (state) => ({
+    night: state.settings.night
+})
+
+export default compose(
+    connect(mapDispatchToProps)
+)(SendMessage);
